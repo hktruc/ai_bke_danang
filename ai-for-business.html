@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Business · Giúp cả công ty cùng dùng được AI | BKE</title>
+<meta name="description" content="Lớp offline 2 ngày cho doanh nghiệp SME: cả đội cùng xây bộ não số doanh nghiệp (Company Brain), chuẩn hóa một quy trình và dạy trợ lý AI làm đúng việc đó — đồng nghiệp nhận lại vẫn dùng được.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI for Business — Đừng chỉ cho nhân viên học dùng AI. Hãy giúp cả công ty cùng dùng được.">
+<meta property="og:description" content="2 ngày offline, 70% thực hành. Rời lớp với trợ lý AI đã được dạy làm đúng một việc thật của công ty bạn.">
+<meta property="og:url" content="https://hktruc.github.io/ai_bke/">
+<!-- 📌 CẦN BỔ SUNG: ảnh chia sẻ 1200x630 (.jpg/.webp dưới 300KB) -->
+<meta property="og:image" content="https://hktruc.github.io/ai_bke/og-image.jpg">
+<!-- 📌 CẦN BỔ SUNG: dán mã Facebook Pixel và Google Analytics (GA4) tại đây -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%2307363b'/%3E%3Ctext x='9' y='29' font-size='26' font-family='Arial' font-weight='700' fill='%23f8c64e'%3EB%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#061f27;--navy2:#07363b;--navy3:#0c434a;
+  --teal:#008c83;--teal2:#00a99c;--teal-soft:#e6f4f2;
+  --gold:#f8c64e;--gold-soft:#fff6dc;
+  --ink:#10202a;--muted:#566370;--line:#dbe4e1;--paper:#f4f7f6;
+  --red:#b3412f;--red-soft:#fbeeeb;
+  --c1:#e07a5f;--c2:#8e7cc3;--c3:#f2a541;--c4:#5b8def;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Be Vietnam Pro',-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input,select{font:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+h1,h2,h3{line-height:1.2;letter-spacing:-.02em}
+h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;margin-bottom:12px}
+h3{font-size:18px;font-weight:700}
+p{color:var(--muted)}
+section{padding:84px 0}
+.head{max-width:720px;margin-bottom:40px}
+.head.c{text-align:center;margin-left:auto;margin-right:auto}
+.head p{font-size:18px}
+.kicker{display:block;color:var(--teal);font-size:14px;font-weight:700;margin-bottom:10px}
+.alt{background:var(--paper)}
+.dark{background:var(--navy2);color:#fff}
+.dark p{color:#c9dcd9}
+.dark .kicker{color:var(--gold)}
+.dark h2{color:#fff}
+.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ghi chú */
+.todo{border:2px dashed #e0a800;background:#fffbea;border-radius:10px;padding:16px 20px;color:#5c4500;font-size:15px}
+.todo b{display:block;color:#8a6500;margin-bottom:4px;font-size:14px}
+.todo ul{margin:6px 0 0 18px}
+
+/* nút */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px 26px;border-radius:8px;border:0;background:var(--gold);color:#2a1f00;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.12);transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.line{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);box-shadow:none}
+.btn.small{min-height:40px;padding:8px 16px;font-size:14px}
+
+/* top + nav */
+.topbar{background:var(--gold);color:#3a2b00;text-align:center;font-size:14px;font-weight:600;padding:9px 16px}
+.topbar span{background:#fff3c4;padding:1px 6px;border-radius:4px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;font-size:24px;color:var(--navy2);text-decoration:none;line-height:1}
+.brand small{display:block;font-size:11px;letter-spacing:1.5px;color:var(--teal);margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:600}
+.navlinks a{text-decoration:none}
+
+/* ===== HERO ===== */
+.hero{background:radial-gradient(circle at 75% 25%,#0f5a61 0,#07363b 45%,#061f27 100%);color:#fff;padding:76px 0 70px}
+.hero-top{max-width:820px}
+.hero .tag{display:inline-block;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#dff5f1;margin-bottom:20px}
+.hero h1{font-size:clamp(34px,5vw,58px);font-weight:800;margin-bottom:18px}
+.hero h1 span{color:var(--gold)}
+.hero .lead{font-size:19px;color:#d4e6e3;margin-bottom:28px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* phương trình */
+.eq{margin-top:48px;display:grid;grid-template-columns:1fr auto 1fr auto 1.2fr auto 1.1fr;gap:12px;align-items:stretch}
+.eq-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.eq-item .top{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:#fff}
+.eq-item .badge{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:5px;background:rgba(255,255,255,.14);color:#cfe8e4;width:max-content}
+.eq-item small{font-size:13.5px;color:#b9d2ce;line-height:1.45}
+.eq-item.hl{background:var(--gold);border-color:var(--gold)}
+.eq-item.hl .top{color:#2a1f00}.eq-item.hl small{color:#5a4300}.eq-item.hl .badge{background:rgba(0,0,0,.1);color:#4a3700}
+.eq-item.res{background:#fff;border-color:#fff}
+.eq-item.res .top{color:var(--navy2)}.eq-item.res small{color:var(--muted)}
+.team-dots{display:flex;gap:6px;margin-top:4px}
+.team-dots span{width:30px;height:30px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:flex;align-items:center;justify-content:center}
+.team-dots .ic{width:16px;height:16px}
+.op{display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:var(--gold)}
+
+.stats{background:var(--navy);padding:28px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{display:flex;gap:12px;align-items:center;color:#fff}
+.stat .ic{width:30px;height:30px;color:var(--gold)}
+.stat b{display:block;font-size:22px;line-height:1.1}
+.stat span{font-size:13px;color:#b7cfcb}
+
+/* ===== HIỆN TẠI vs SAU LỚP ===== */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{border-radius:16px;padding:26px;border:1px solid var(--line);background:#fff}
+.panel.bad{background:#fff}
+.panel.good{background:var(--teal-soft);border-color:#bfe2dc}
+.panel-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.panel-h b{font-size:17px}
+.chip{font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:6px}
+.bad .chip{background:var(--red-soft);color:var(--red)}
+.good .chip{background:var(--teal);color:#fff}
+.flow{display:grid;grid-template-columns:auto 28px auto 28px 1fr;align-items:center;row-gap:10px}
+.person{width:38px;height:38px;border-radius:50%;background:#eef2f1;display:flex;align-items:center;justify-content:center;color:var(--navy3)}
+.person .ic{width:20px;height:20px}
+.arr{height:2px;background:#c5d1ce;position:relative;margin:0 4px}
+.arr:after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left:7px solid #c5d1ce;border-right:0}
+.arr.dash{background:repeating-linear-gradient(90deg,#d9a79c 0 5px,transparent 5px 9px)}
+.arr.dash:after{border-left-color:#d9a79c}
+.minibot{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:#f3f5f5;color:#8a9a97}
+.minibot .ic{width:18px;height:18px}
+.out{font-size:13.5px;font-weight:600;padding:7px 10px;border-radius:8px;display:flex;gap:6px;align-items:center}
+.out .ic{width:16px;height:16px}
+.o1{background:#fdece7;color:#9c3b22}.o2{background:#efeafa;color:#5b4697}.o3{background:#fff1dc;color:#8c5a07}.o4{background:#e8effd;color:#2f55a8}
+.o-ok{background:#fff;color:var(--teal);border:1px solid #bfe2dc}
+/* sau lớp: hội tụ */
+.flow2{display:grid;grid-template-columns:auto 28px 1.1fr 28px 1fr;align-items:center;row-gap:10px}
+.hub{grid-column:3;grid-row:1 / span 4;background:var(--navy2);color:#fff;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;align-self:stretch;justify-content:center}
+.hub .ic{width:30px;height:30px;color:var(--gold)}
+.hub b{font-size:14px}
+.hub .reads{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.hub .reads span{font-size:11px;background:rgba(255,255,255,.14);padding:2px 7px;border-radius:4px}
+.flow2 .arr{grid-column:2}.flow2 .arr.r{grid-column:4}
+.pains{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pains span{font-size:13px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--red-soft);color:var(--red);display:flex;gap:6px;align-items:center}
+.pains .ic{width:14px;height:14px}
+.good .pains span{background:#fff;color:var(--teal)}
+
+/* ===== TRƯỚC / SAU EMAIL ===== */
+.mails{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mailcard{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.mailcard .mh{padding:12px 18px;font-size:13.5px;font-weight:700;display:flex;gap:8px;align-items:center}
+.mailcard.bad .mh{background:var(--red-soft);color:var(--red)}
+.mailcard.good .mh{background:var(--teal);color:#fff}
+.mailcard .mb{padding:18px}
+.knows{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.knows span{font-size:12.5px;padding:4px 9px;border-radius:5px;display:flex;gap:5px;align-items:center}
+.bad .knows span{background:#f4f4f4;color:#8b8b8b;text-decoration:line-through}
+.good .knows span{background:var(--teal-soft);color:var(--teal);font-weight:600}
+.knows .ic{width:13px;height:13px}
+.bubble{background:#f6f8f8;border-radius:12px 12px 12px 2px;padding:14px 16px;font-size:15.5px;color:var(--ink)}
+.verdict{margin-top:12px;font-size:14px;font-weight:700;display:flex;gap:6px;align-items:center}
+.bad .verdict{color:var(--red)}.good .verdict{color:var(--teal)}
+.verdict .ic{width:18px;height:18px}
+
+/* ===== NHÂN VIÊN MỚI = AI ===== */
+.map{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;max-width:920px;margin:0 auto}
+.map .colh{font-size:13px;font-weight:700;text-align:center;padding:10px;border-radius:10px 10px 0 0}
+.map .colh.l{background:#eef2f1;color:var(--navy3)}
+.map .colh.r{background:var(--navy2);color:var(--gold)}
+.map .cell{padding:16px 18px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--line)}
+.map .cell.l{background:#fff}
+.map .cell.r{background:#fff}
+.map .cell .ic{width:26px;height:26px}
+.map .cell.l .ic{color:#8a9a97}
+.map .cell.r .ic{color:var(--teal)}
+.map .cell b{display:block;font-size:15.5px}
+.map .cell small{font-size:13px;color:var(--muted)}
+.map .mid{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:22px;font-weight:800;border-bottom:1px solid var(--line)}
+.map .cell.r .term{font-size:11px;font-weight:700;background:var(--gold);color:#2a1f00;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:1px}
+.map-box{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--line)}
+.map-box .map{max-width:none}
+
+/* ===== 8 KHỐI DNA ===== */
+.dna-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.ring{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;grid-template-rows:repeat(3,1fr);aspect-ratio:1/1;max-width:520px;width:100%;margin:0 auto}
+.blk{border:1px solid var(--line);background:#fff;border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;cursor:pointer;transition:all .15s;font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.3}
+.blk .n{width:24px;height:24px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.blk .ic{color:var(--teal);width:26px;height:26px}
+.blk:hover{border-color:var(--teal)}
+.blk[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.blk[aria-pressed="true"] .ic{color:var(--gold)}
+.blk[aria-pressed="true"] .n{background:var(--gold);color:#2a1f00}
+.blk.key{box-shadow:inset 0 0 0 2px var(--gold)}
+.core{background:var(--navy2);color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px}
+.core .ic{width:34px;height:34px;color:var(--gold)}
+.core b{font-size:15px;line-height:1.25;margin-top:6px}
+.core small{font-size:11.5px;color:#b8d0cc}
+.detail{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+.detail .dn{font-size:13px;font-weight:700;color:var(--teal)}
+.detail h3{font-size:24px;margin:4px 0 18px}
+.qa{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;margin-bottom:16px}
+.qa .bub{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.qa .bub .ic{width:20px;height:20px}
+.qa.q .bub{background:var(--teal-soft);color:var(--teal)}
+.qa.m .bub{background:var(--red-soft);color:var(--red)}
+.qa small{display:block;font-size:12px;font-weight:700;text-transform:none}
+.qa.q small{color:var(--teal)}.qa.m small{color:var(--red)}
+.qa p{color:var(--ink);font-size:16px;margin-top:2px}
+.hint{font-size:13px;color:var(--muted);margin-top:6px}
+.how{margin-top:34px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.how .s{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600}
+.how .s .ic{width:18px;height:18px;color:var(--teal)}
+.how .a{color:var(--gold);font-weight:800}
+.src{margin-top:14px;font-size:13.5px;color:var(--muted);font-style:italic;text-align:center}
+
+/* ===== ỨNG DỤNG ===== */
+.depts{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.dept{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+.dept .circ{width:52px;height:52px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.dept b{display:block;font-size:15px;margin-bottom:6px}
+.dept small{font-size:13px;color:var(--muted);display:block;line-height:1.45}
+.pick{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pick div{display:flex;gap:12px;align-items:center;background:var(--gold-soft);border-radius:12px;padding:14px 16px;font-size:14.5px;font-weight:600}
+.pick .ic{color:#9a7200}
+
+/* ===== ROI ===== */
+.roi{display:grid;grid-template-columns:1fr 1.1fr;gap:26px}
+.roi-form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.roi-form label{font-size:13.5px;font-weight:600;display:block;margin-bottom:6px}
+.roi-form input{width:100%;padding:11px 12px;border:1px solid #c7d4d1;border-radius:8px;background:#fbfdfc}
+.roi-form .full{grid-column:1/-1;font-size:12.5px;color:var(--muted)}
+.roi-out{background:var(--navy2);border-radius:16px;padding:26px;color:#fff}
+.bars{display:flex;flex-direction:column;gap:14px;margin:6px 0 20px}
+.bar-l{display:flex;justify-content:space-between;font-size:13.5px;color:#c4d9d6;margin-bottom:5px}
+.bar-l b{color:#fff}
+.bar{height:16px;border-radius:8px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:8px;transition:width .3s}
+.bar .b1{background:#8fb3ae}.bar .b2{background:var(--gold)}.bar .b3{background:#e5866f}
+.roi-big{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.roi-big div{background:rgba(255,255,255,.07);border-radius:12px;padding:14px}
+.roi-big b{display:block;font-size:26px;color:var(--gold);line-height:1.15}
+.roi-big span{font-size:13px;color:#c4d9d6}
+.roi-out .note{font-size:12px;color:#9fbdb8;margin-top:14px}
+
+/* ===== LỘ TRÌNH ===== */
+.tl{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tl:before{content:"";position:absolute;left:6%;right:6%;top:31px;height:3px;background:rgba(255,255,255,.18)}
+.node{position:relative;text-align:center}
+.dot{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;background:var(--navy3);border:3px solid var(--teal2);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.dot .ic{width:28px;height:28px;color:var(--gold)}
+.node .when{font-size:12.5px;font-weight:700;color:var(--gold)}
+.node h3{color:#fff;font-size:16.5px;margin:4px 0 10px;min-height:40px}
+.node .get{display:inline-flex;gap:6px;align-items:center;font-size:13px;background:rgba(255,255,255,.1);color:#e3efed;border-radius:999px;padding:6px 12px}
+.node .get .ic{width:14px;height:14px;color:var(--gold)}
+.day-tags{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:26px}
+.day-tags div{text-align:center;font-size:13px;font-weight:700;letter-spacing:.3px;color:#a9c7c2;border-bottom:2px solid rgba(255,255,255,.15);padding-bottom:8px}
+.track{margin-top:44px;background:rgba(255,255,255,.06);border:1px dashed rgba(248,198,78,.6);border-radius:16px;padding:22px 24px}
+.track-h{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.track-h b{color:var(--gold);font-size:18px}
+.track-h span{font-size:13.5px;color:#b7cfcb}
+.rail{position:relative;height:6px;background:rgba(255,255,255,.15);border-radius:3px;margin:0 10px 58px}
+.rail i{position:absolute;left:0;top:0;height:6px;width:100%;border-radius:3px;background:linear-gradient(90deg,var(--teal2),var(--gold))}
+.mk{position:absolute;top:-9px;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.mk:before{content:"";display:block;width:24px;height:24px;border-radius:50%;background:#fff;border:4px solid var(--gold);margin:0 auto 6px}
+.mk.m:before{border-color:var(--teal2);width:18px;height:18px;margin-top:3px}
+.mk span{font-size:12px;color:#d6e7e4;font-weight:600}
+.track-goals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.track-goals div{display:flex;gap:10px;align-items:center;font-size:14px;color:#e3efed}
+.track-goals .ic{color:var(--gold);width:20px;height:20px}
+
+/* ===== SẢN PHẨM MANG VỀ ===== */
+.outs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.o{border-radius:14px;padding:20px;background:#fff;border:1px solid var(--line);display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center}
+.o .oi{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.o .who{font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:4px}
+.o b{display:block;font-size:15.5px;line-height:1.3}
+.o small{font-size:13px;color:var(--muted)}
+.o.p .oi{background:#e8effd;color:#2f55a8}.o.p .who{background:#e8effd;color:#2f55a8}
+.o.t .oi{background:var(--teal-soft);color:var(--teal)}.o.t .who{background:var(--teal-soft);color:var(--teal)}
+.o.c .oi{background:var(--gold-soft);color:#9a7200}.o.c .who{background:var(--gold-soft);color:#8a6500}
+.legend{display:flex;gap:16px;justify-content:center;margin-top:18px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.legend span{display:flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px;display:block}
+
+/* ===== LỚP VẬN HÀNH ===== */
+.room-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.room{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.room-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:13px;color:var(--muted)}
+.room-h b{color:var(--ink);font-size:15px}
+.clusters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cluster{border:1px dashed #bfe2dc;border-radius:12px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;background:#fbfefd}
+.coach{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#2a1f00;display:flex;align-items:center;justify-content:center}
+.coach .ic{width:18px;height:18px}
+.tbl{width:100%;height:26px;border-radius:6px;background:var(--teal-soft);border:1px solid #bfe2dc;display:flex;align-items:center;justify-content:center;gap:3px}
+.tbl i{width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.room-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--muted)}
+.room-legend span{display:flex;gap:6px;align-items:center}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.num{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.num b{display:block;font-size:28px;color:var(--navy2);line-height:1.1}
+.num span{font-size:13.5px;color:var(--muted)}
+.loop{margin-top:34px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.lp{display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;min-width:130px;text-align:center;font-size:14px;font-weight:600}
+.lp .ic{color:var(--teal);width:26px;height:26px}
+.lp.hl{border-color:var(--gold);background:var(--gold-soft)}
+.loop .a{color:var(--gold);font-size:20px;font-weight:800}
+.loop-back{text-align:center;margin-top:10px;font-size:13.5px;color:var(--teal);font-weight:600}
+
+/* ===== ĐỘI NGŨ ===== */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tm{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tm .ph{height:200px;background:linear-gradient(145deg,#0d5a5a,#072d35);display:flex;align-items:center;justify-content:center;color:#9fc6c0;font-size:14px}
+.tm .in{padding:18px}
+.tm .in b{display:block}
+.tm .in span{font-size:14px;color:var(--teal);font-weight:600}
+.tm .in p{font-size:14px;margin-top:6px}
+
+/* ===== HỌC PHÍ ===== */
+.price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.price-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;box-shadow:0 20px 50px rgba(7,54,59,.08)}
+.pill{display:inline-block;background:var(--gold-soft);color:#6b4f00;font-size:13px;font-weight:700;padding:5px 10px;border-radius:6px;margin-bottom:14px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.tier{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.tier.rec{border:2px solid var(--gold);background:var(--gold-soft)}
+.tier .ppl{display:flex;justify-content:center;gap:2px;color:var(--teal);margin-bottom:6px}
+.tier .ppl .ic{width:18px;height:18px}
+.tier small{display:block;font-size:12.5px;color:var(--muted)}
+.tier b{display:block;font-size:17px;color:var(--navy2);margin-top:4px}
+.tier s{font-size:12px;color:#8a9795}
+.incl{display:grid;grid-template-columns:1fr 1fr;gap:10px;list-style:none}
+.incl li{display:flex;gap:8px;align-items:center;font-size:14px;background:var(--paper);border-radius:10px;padding:10px 12px}
+.incl .ic{width:18px;height:18px;color:var(--teal)}
+.extra{margin-top:14px;display:flex;gap:10px;align-items:flex-start;font-size:14px;border:1px dashed var(--line);border-radius:10px;padding:12px 14px}
+.extra .ic{color:#9a7200;margin-top:2px;width:20px;height:20px}
+.form-card{background:var(--navy2);color:#fff;border-radius:16px;padding:30px}
+.form-card h3{font-size:22px;color:#fff}
+.form-card p{color:#cfe0dd;font-size:15px}
+.form-card label{display:block;font-size:13.5px;font-weight:600;margin:13px 0 6px}
+.form-card input,.form-card select{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.35);border-radius:8px;background:rgba(255,255,255,.08);color:#fff}
+.form-card input::placeholder{color:#9fbdb8}
+.form-card option{color:#111}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-card .btn{width:100%;margin-top:20px}
+.alt-contact{margin-top:14px;font-size:14px;color:#cfe0dd;text-align:center}
+.alt-contact a{color:var(--gold);font-weight:700}
+#form-status{margin-top:12px;font-size:14px;min-height:20px}
+#form-status.ok{color:#9ff0c7}#form-status.err{color:#ffc2b3}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{font-weight:700;font-size:16.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--teal);font-size:22px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin-top:8px;font-size:15.5px}
+
+.final{background:var(--gold);text-align:center;padding:68px 0}
+.final h2{color:#1f1700}
+.final p{color:#5c4600;font-size:18px;max-width:600px;margin:0 auto 24px}
+.final .btn{background:var(--navy2);color:#fff}
+footer{background:var(--navy);color:#b7cfcb;padding:36px 0;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{color:#fff}footer a{color:var(--gold)}
+.zalo{position:fixed;right:18px;bottom:18px;z-index:60;background:#0068ff;color:#fff;border-radius:999px;padding:12px 18px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 10px 26px rgba(0,104,255,.4);display:flex;gap:8px;align-items:center}
+.zalo .ic{width:18px;height:18px}
+
+
+/* ===== TIẾT KIỆM ===== */
+.tok{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin-bottom:26px}
+.tok-h{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.tok-h .ic{color:#9a7200}
+.tok-h b{font-size:17px}
+.tok-h span{margin-left:auto;white-space:nowrap;font-size:12px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.tok-row{display:grid;grid-template-columns:220px 1fr;gap:18px;align-items:center;margin-bottom:14px}
+.tok-l b{display:block;font-size:14.5px}
+.tok-l small{font-size:12.5px;color:var(--muted)}
+.tok-bar{display:flex;height:40px;border-radius:8px;overflow:hidden;gap:2px}
+.tok-bar i{font-style:normal;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;padding:0 4px}
+.s1{background:#c7705a}.s2{background:#d98c77}.s3{background:var(--teal)}.s4{background:#e7b0a3;color:#6b2a20!important}.s5{background:var(--gold);color:#3a2b00!important}.s0{background:transparent}
+.tok-legend{display:flex;flex-wrap:wrap;gap:16px;margin:16px 0 0 238px;font-size:12.5px;color:var(--muted)}
+.tok-legend span{display:flex;gap:6px;align-items:center}
+.tok-legend i{width:12px;height:12px;border-radius:3px;display:block}
+.tok-note{margin-top:16px;font-size:14.5px;background:var(--gold-soft);border-radius:10px;padding:12px 16px;color:#4a3a10}
+.leaks{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.leak-h,.leak{display:grid;grid-template-columns:230px 1fr 40px 1fr;align-items:center}
+.leak-h{background:var(--paper);font-size:13px;font-weight:700}
+.leak-h span{padding:12px 16px;display:flex;gap:6px;align-items:center}
+.leak-h .ic{width:16px;height:16px}
+.bad-h{color:var(--red)}.good-h{color:var(--teal)}
+.leak{border-top:1px solid var(--line)}
+.lk-n{display:flex;gap:12px;align-items:center;padding:14px 16px}
+.lk-i{width:40px;height:40px;border-radius:10px;background:var(--gold-soft);color:#9a7200;display:flex;align-items:center;justify-content:center;flex:none}
+.lk-n b{font-size:15px}
+.lk-b,.lk-g{font-size:14.5px;padding:10px 12px;margin:8px 0;border-radius:8px}
+.lk-b{background:var(--red-soft);color:#6b2a20}
+.lk-g{background:var(--teal-soft);color:#0b4f48;font-weight:600;margin-right:14px}
+.lk-a{text-align:center;color:var(--gold);font-weight:800;font-size:18px}
+.gift{margin:26px auto 0;max-width:760px;display:flex;gap:16px;align-items:center;background:linear-gradient(90deg,var(--gold-soft),#fff);border:2px solid var(--gold);border-radius:14px;padding:18px 22px}
+.gift .gi{width:52px;height:52px;border-radius:12px;background:var(--gold);color:#2a1f00;display:flex;align-items:center;justify-content:center;flex:none}
+.gift .gi .ic{width:28px;height:28px}
+.gift span{font-size:12px;font-weight:700;color:#8a6500}
+.gift b{display:block;font-size:17px}
+.gift small{font-size:13.5px;color:var(--muted)}
+.tier{position:relative}
+.tier em{display:block;font-style:normal;font-size:12px;color:var(--teal);font-weight:600;margin-top:4px;min-height:16px}
+.tier .flag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--navy2);color:var(--gold);font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.incl li.gift-li{background:var(--gold-soft);font-weight:600}
+.incl li.gift-li .ic{color:#9a7200}
+@media(max-width:860px){
+  .tok-row{grid-template-columns:1fr;gap:8px}
+  .tok-legend{margin-left:0}
+  .leak-h{display:none}
+  .leak{grid-template-columns:1fr;padding:6px 0 10px}
+  .lk-a{display:none}
+  .lk-b,.lk-g{margin:4px 16px}
+  .lk-b:before{content:"Hôm nay: ";font-weight:700}
+  .lk-g:before{content:"Có Company Brain: "}
+}
+@media(max-width:640px){
+  .tok{padding:20px}
+  .tok-bar i{font-size:0}
+  .tier .flag{top:-10px}
+  .gift{flex-direction:column;text-align:center}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1020px){
+  .eq{grid-template-columns:1fr auto 1fr;row-gap:12px}
+  .eq .op.opB{display:none}
+  .eq .op.opC{grid-column:2}
+  .vs,.mails,.dna-wrap,.roi,.room-wrap,.price-wrap{grid-template-columns:1fr}
+  .depts{grid-template-columns:repeat(3,1fr)}
+  .outs,.team{grid-template-columns:1fr 1fr}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .navlinks a:not(.btn){display:none}
+  .tl{grid-template-columns:1fr 1fr;row-gap:30px}
+  .tl:before,.day-tags{display:none}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:60px 0}
+  .hero{padding:52px 0}
+  .hero .actions .btn{width:100%}
+  .eq{grid-template-columns:1fr}
+  .eq .op{transform:rotate(90deg);height:20px}
+  .eq .op.opC{grid-column:auto}
+  .eq .op.opB{display:flex}
+  .flow{grid-template-columns:auto 18px auto 18px 1fr}
+  .flow2{grid-template-columns:auto 18px 1fr 18px 1fr}
+  .panel{padding:18px}
+  .map{grid-template-columns:1fr 34px 1fr}
+  .map .cell{flex-direction:column;align-items:flex-start;gap:6px;padding:12px}
+  .map .cell b{font-size:14px}
+  .ring{gap:6px}
+  .blk{font-size:11.5px;padding:6px;border-radius:10px}
+  .blk .ic{width:20px;height:20px}
+  .core b{font-size:12.5px}.core small{display:none}.core .ic{width:24px;height:24px}
+  .depts{grid-template-columns:1fr 1fr}
+  .pick,.outs,.team,.track-goals{grid-template-columns:1fr}
+  .roi-form{grid-template-columns:1fr}
+  .roi-big{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr}
+  .node h3{min-height:0}
+  .clusters{grid-template-columns:1fr 1fr}
+  .tiers{grid-template-columns:1fr}
+  .incl{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .price-card,.form-card{padding:22px}
+  .mk span{font-size:10.5px}
+  .mk.m span{display:none}
+  .zalo span{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- ===== Bộ biểu tượng dùng chung ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h13"/><path d="M8 7h7M8 11h7"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M10 6h10M10 12h10M10 18h10"/><path d="M3 6l1.5 1.5L7 5M3 12l1.5 1.5L7 11M3 18l1.5 1.5L7 17"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V5M9 14h.01M15 14h.01M9 17h6"/><circle cx="12" cy="4" r="1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 13a8 8 0 0 0 14.3 4.9L20 16"/><path d="M4 4v4h4M20 20v-4h-4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3 10v4h4l9 5V5l-9 5z"/><path d="M19 9a3 3 0 0 1 0 6"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.8 0 5 2 5 5"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4h13l-2.5 4.5L18 13H5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13M12 8C10 4 6.5 4.5 7.5 7.5M12 8c2-4 5.5-3.5 4.5-.5"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.7 5.7l12.6 12.6"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></symbol>
+  <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7"/><path d="M9 15v2c0 1.7 2.7 3 6 3s6-1.3 6-3v-5c0-1.7-2.7-3-6-3"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M7 11l4-4 3 3 3-3 4 4-7 7z"/><path d="M3 12l4-1M14 18l-3 3-8-8"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3 3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3 3 3 0 0 1-3-3"/><path d="M12 9h2M12 14h3M9 9H8M9 14H7"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+</svg>
+
+<div class="topbar">Lớp khai giảng <span>[NGÀY KHAI GIẢNG]</span> tại <span>[ĐỊA ĐIỂM]</span> · Giới hạn 12 doanh nghiệp · Đăng ký nhóm để nhận giá tốt hơn</div>
+
+<header>
+  <nav class="wrap" aria-label="Điều hướng chính">
+    <a href="#top" class="brand">BKE<small>AI FOR BUSINESS</small></a>
+    <div class="navlinks">
+      <a href="#cach-lam">Cách làm</a>
+      <a href="#tiet-kiem">Tiết kiệm</a>
+      <a href="#lo-trinh">Lộ trình</a>
+      <a href="#hoc-phi">Học phí</a>
+      <a href="#hoi-dap">Hỏi đáp</a>
+      <a href="#dang-ky" class="btn small">Đăng ký tư vấn</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="tag">Lớp offline 2 ngày · Doanh nghiệp 10–100 người</div>
+      <h1>Đừng chỉ cho nhân viên học dùng AI. <span>Hãy giúp cả công ty cùng dùng được.</span></h1>
+      <p class="lead">2 ngày, đội của bạn làm ra một trợ lý AI hiểu công ty và làm đúng một việc thật. Ai trong đội dùng cũng ra cùng một kết quả.</p>
+      <div class="actions">
+        <a href="#dang-ky" class="btn">Đăng ký tư vấn</a>
+        <a href="#lo-trinh" class="btn line">Xem lộ trình 2 ngày</a>
+      </div>
+    </div>
+
+    <div class="eq" aria-label="Công thức của khóa học">
+      <div class="eq-item">
+        <div class="top"><svg class="ic"><use href="#i-brain"/></svg>Bộ não số doanh nghiệp</div>
+        <span class="badge">Company Brain</span>
+        <small>Toàn bộ tri thức, giọng nói và chuẩn mực của công ty ở dạng AI đọc được</small>
+      </div>
+      <div class="op opA">+</div>
+      <div class="eq-item">
+        <div class="top"><svg class="ic"><use href="#i-list"/></svg>Quy trình chuẩn</div>
+        <span class="badge">SOP</span>
+        <small>Các bước, ai duyệt, thế nào là xong</small>
+      </div>
+      <div class="op opB">→</div>
+      <div class="eq-item hl">
+        <div class="top"><svg class="ic"><use href="#i-bot"/></svg>Dạy trợ lý AI một việc</div>
+        <span class="badge">Skill</span>
+        <small>Dạy một lần, dùng mãi</small>
+      </div>
+      <div class="op opC">→</div>
+      <div class="eq-item res">
+        <div class="top"><svg class="ic"><use href="#i-people"/></svg>Cả đội dùng được</div>
+        <div class="team-dots"><span><svg class="ic"><use href="#i-check"/></svg></span><span><svg class="ic"><use href="#i-check"/></svg></span><span><svg class="ic"><use href="#i-check"/></svg></span><span><svg class="ic"><use href="#i-check"/></svg></span></div>
+        <small>Cùng giọng, cùng chuẩn, không phụ thuộc một người</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><svg class="ic"><use href="#i-cal"/></svg><div><b>2 ngày</b><span>Offline · 16 giờ</span></div></div>
+    <div class="stat"><svg class="ic"><use href="#i-laptop"/></svg><div><b>70%</b><span>Thời gian thực hành</span></div></div>
+    <div class="stat"><svg class="ic"><use href="#i-people"/></svg><div><b>12 bàn</b><span>Mỗi doanh nghiệp một bàn</span></div></div>
+    <div class="stat"><svg class="ic"><use href="#i-flag"/></svg><div><b>30 ngày</b><span>Coach hỗ trợ sau lớp</span></div></div>
+  </div>
+</div>
+
+<!-- 📌 BẰNG CHỨNG #1 -->
+<div class="wrap" style="padding-top:26px">
+  <div class="todo"><b>📌 CẦN BỔ SUNG — Bằng chứng #1: dải thành tựu BKE</b>3–4 con số nổi bật (số trợ lý AI đang chạy tại BKE, giờ tiết kiệm/tháng, số học viên đã đào tạo, số năm làm đào tạo) + logo đối tác/báo chí nếu có.</div>
+</div>
+
+<!-- ===== HIỆN TẠI vs SAU LỚP ===== -->
+<section id="van-de">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Vì sao công ty dùng AI mà vẫn không nhanh hơn</span>
+      <h2>Mỗi người một kiểu, hay cả đội một chuẩn?</h2>
+    </div>
+    <div class="vs">
+      <div class="panel bad">
+        <div class="panel-h"><b>Hôm nay</b><span class="chip">Mỗi người tự dùng AI</span></div>
+        <div class="flow">
+          <div class="person"><svg class="ic"><use href="#i-user"/></svg></div><div class="arr dash"></div><div class="minibot"><svg class="ic"><use href="#i-bot"/></svg></div><div class="arr dash"></div><div class="out o1"><svg class="ic"><use href="#i-x"/></svg>Hứa giao ngày mai</div>
+          <div class="person"><svg class="ic"><use href="#i-user"/></svg></div><div class="arr dash"></div><div class="minibot"><svg class="ic"><use href="#i-bot"/></svg></div><div class="arr dash"></div><div class="out o2"><svg class="ic"><use href="#i-x"/></svg>Giọng quá suồng sã</div>
+          <div class="person"><svg class="ic"><use href="#i-user"/></svg></div><div class="arr dash"></div><div class="minibot"><svg class="ic"><use href="#i-bot"/></svg></div><div class="arr dash"></div><div class="out o3"><svg class="ic"><use href="#i-x"/></svg>Sai giá, sai chính sách</div>
+          <div class="person"><svg class="ic"><use href="#i-user"/></svg></div><div class="arr dash"></div><div class="minibot"><svg class="ic"><use href="#i-bot"/></svg></div><div class="arr dash"></div><div class="out o4"><svg class="ic"><use href="#i-check"/></svg>Ổn — vì người này giỏi</div>
+        </div>
+        <div class="pains">
+          <span><svg class="ic"><use href="#i-x"/></svg>Mỗi người một giọng</span>
+          <span><svg class="ic"><use href="#i-x"/></svg>Hứa vượt chính sách</span>
+          <span><svg class="ic"><use href="#i-x"/></svg>Người giỏi nghỉ là mất</span>
+        </div>
+      </div>
+
+      <div class="panel good">
+        <div class="panel-h"><b>Sau lớp học</b><span class="chip">Cả đội dùng chung một trợ lý</span></div>
+        <div class="flow2">
+          <div class="person" style="grid-column:1;grid-row:1"><svg class="ic"><use href="#i-user"/></svg></div><div class="arr" style="grid-row:1"></div>
+          <div class="person" style="grid-column:1;grid-row:2"><svg class="ic"><use href="#i-user"/></svg></div><div class="arr" style="grid-row:2"></div>
+          <div class="person" style="grid-column:1;grid-row:3"><svg class="ic"><use href="#i-user"/></svg></div><div class="arr" style="grid-row:3"></div>
+          <div class="person" style="grid-column:1;grid-row:4"><svg class="ic"><use href="#i-user"/></svg></div><div class="arr" style="grid-row:4"></div>
+          <div class="hub"><svg class="ic"><use href="#i-bot"/></svg><b>Trợ lý AI của công ty</b><div class="reads"><span>Company Brain</span><span>SOP</span><span>Skill</span></div></div>
+          <div class="arr r" style="grid-row:1"></div><div class="out o-ok" style="grid-column:5;grid-row:1"><svg class="ic"><use href="#i-check"/></svg>Đúng chuẩn</div>
+          <div class="arr r" style="grid-row:2"></div><div class="out o-ok" style="grid-column:5;grid-row:2"><svg class="ic"><use href="#i-check"/></svg>Đúng chuẩn</div>
+          <div class="arr r" style="grid-row:3"></div><div class="out o-ok" style="grid-column:5;grid-row:3"><svg class="ic"><use href="#i-check"/></svg>Đúng chuẩn</div>
+          <div class="arr r" style="grid-row:4"></div><div class="out o-ok" style="grid-column:5;grid-row:4"><svg class="ic"><use href="#i-check"/></svg>Đúng chuẩn</div>
+        </div>
+        <div class="pains">
+          <span><svg class="ic"><use href="#i-check"/></svg>Một giọng công ty</span>
+          <span><svg class="ic"><use href="#i-check"/></svg>Có người duyệt</span>
+          <span><svg class="ic"><use href="#i-check"/></svg>Người mới dùng được ngay</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMAIL TRƯỚC / SAU ===== -->
+<section class="alt">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Ví dụ thật</span>
+      <h2>Khách hỏi giao gấp. AI trả lời thế nào?</h2>
+    </div>
+    <div class="mails">
+      <div class="mailcard bad">
+        <div class="mh"><svg class="ic"><use href="#i-x"/></svg>AI không biết gì về công ty</div>
+        <div class="mb">
+          <div class="knows"><span>Chính sách giao hàng</span><span>Cách xưng hô</span><span>Bước hỏi kho</span></div>
+          <div class="bubble">"Chúng tôi cam kết giao ngay ngày mai cho quý khách…"</div>
+          <div class="verdict"><svg class="ic"><use href="#i-x"/></svg>Hứa vượt khả năng → công ty đi xin lỗi khách</div>
+        </div>
+      </div>
+      <div class="mailcard good">
+        <div class="mh"><svg class="ic"><use href="#i-check"/></svg>Trợ lý AI đã được dạy theo cách công ty làm</div>
+        <div class="mb">
+          <div class="knows"><span><svg class="ic"><use href="#i-check"/></svg>Xưng anh/chị</span><span><svg class="ic"><use href="#i-check"/></svg>Không hứa vượt chính sách</span><span><svg class="ic"><use href="#i-check"/></svg>Hỏi kho → xác nhận → duyệt</span></div>
+          <div class="bubble">"Em đã nhận yêu cầu giao gấp của anh/chị. Em sẽ kiểm tra với kho và báo thời gian giao chính xác trước 15 giờ hôm nay."</div>
+          <div class="verdict"><svg class="ic"><use href="#i-check"/></svg>Đúng giọng, đúng chính sách, có người chịu trách nhiệm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DẠY AI NHƯ NHÂN VIÊN MỚI ===== -->
+<section id="cach-lam">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Cách làm</span>
+      <h2>Dạy AI giống hệt cách bạn đào tạo nhân viên mới</h2>
+      <p>Không có công thức bí ẩn. Chỉ khác người nhận việc là AI.</p>
+    </div>
+    <div class="map-box">
+      <div class="map">
+        <div class="colh l">Nhân viên mới nhận được</div><div class="colh" style="background:#fff"></div><div class="colh r">Trợ lý AI nhận được</div>
+
+        <div class="cell l"><svg class="ic"><use href="#i-user"/></svg><div><b>Một người mới vào làm</b><small>Sẵn sàng làm, chưa biết gì về công ty</small></div></div>
+        <div class="mid">=</div>
+        <div class="cell r"><svg class="ic"><use href="#i-bot"/></svg><div><b>Trợ lý AI</b><small>Công cụ cả đội mở ra dùng hằng ngày</small></div></div>
+
+        <div class="cell l"><svg class="ic"><use href="#i-book"/></svg><div><b>Sổ tay nhập môn</b><small>Đọc ngày đầu để hiểu công ty</small></div></div>
+        <div class="mid">=</div>
+        <div class="cell r"><svg class="ic"><use href="#i-brain"/></svg><div><b>Bộ não số doanh nghiệp <span class="term">Company Brain</span></b><small>8 khối DNA: mọi điều AI cần biết về công ty</small></div></div>
+
+        <div class="cell l"><svg class="ic"><use href="#i-list"/></svg><div><b>Hướng dẫn công việc</b><small>Người cũ chỉ từng bước</small></div></div>
+        <div class="mid">=</div>
+        <div class="cell r"><svg class="ic"><use href="#i-list"/></svg><div><b>Quy trình chuẩn <span class="term">SOP</span></b><small>Các bước, người duyệt, chuẩn đạt</small></div></div>
+
+        <div class="cell l" style="border-bottom:0"><svg class="ic"><use href="#i-spark"/></svg><div><b>Một việc đã thành thạo</b><small>Không cần kèm nữa</small></div></div>
+        <div class="mid" style="border-bottom:0">=</div>
+        <div class="cell r" style="border-bottom:0"><svg class="ic"><use href="#i-spark"/></svg><div><b>Một Skill <span class="term">Skill</span></b><small>Một việc đã dạy cho trợ lý, ai giao cũng ra kết quả giống nhau</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8 KHỐI DNA ===== -->
+<section class="alt" id="dna">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Bên trong bộ não số doanh nghiệp</span>
+      <h2>8 khối DNA tạo nên bộ não số. Thiếu khối nào, AI hỏng đúng chỗ đó.</h2>
+      <p>Bấm vào từng khối để xem.</p>
+    </div>
+    <div class="dna-wrap">
+      <div class="ring" role="group" aria-label="8 khối DNA của bộ não số doanh nghiệp">
+        <button class="blk" data-i="0"><span class="n">1</span><svg class="ic"><use href="#i-heart"/></svg>Gốc gác & lý do tồn tại</button>
+        <button class="blk" data-i="1"><span class="n">2</span><svg class="ic"><use href="#i-lock"/></svg>Nguyên tắc bất di bất dịch</button>
+        <button class="blk" data-i="2"><span class="n">3</span><svg class="ic"><use href="#i-target"/></svg>Chân dung khách hàng thật</button>
+        <button class="blk" data-i="7"><span class="n">8</span><svg class="ic"><use href="#i-ban"/></svg>Lằn ranh — điều cấm</button>
+        <div class="core"><svg class="ic"><use href="#i-brain"/></svg><b>Bộ não số doanh nghiệp</b><small>Company Brain</small></div>
+        <button class="blk" data-i="3"><span class="n">4</span><svg class="ic"><use href="#i-gift"/></svg>Sản phẩm & lời hứa</button>
+        <button class="blk key" data-i="6"><span class="n">7</span><svg class="ic"><use href="#i-db"/></svg>Thông tin chuẩn đã xác nhận</button>
+        <button class="blk" data-i="5"><span class="n">6</span><svg class="ic"><use href="#i-cog"/></svg>Cách làm việc</button>
+        <button class="blk" data-i="4"><span class="n">5</span><svg class="ic"><use href="#i-chat"/></svg>Giọng công ty</button>
+      </div>
+
+      <div class="detail" aria-live="polite">
+        <div class="dn" id="d-n">Phần 7</div>
+        <h3 id="d-t">Thông tin chuẩn đã xác nhận</h3>
+        <div class="qa q"><div class="bub"><svg class="ic"><use href="#i-chat"/></svg></div><div><small>Trả lời câu hỏi</small><p id="d-q">…</p></div></div>
+        <div class="qa m"><div class="bub"><svg class="ic"><use href="#i-x"/></svg></div><div><small>Thiếu khối này thì</small><p id="d-m">…</p></div></div>
+        <p class="hint" id="d-h"></p>
+      </div>
+    </div>
+
+    <p class="src">Khung 8 khối rút ra từ bộ tài liệu BKE đang dùng cho chính mình, không phải khung nghĩ ra riêng cho lớp học.</p>
+  </div>
+</section>
+
+<!-- 📌 BẰNG CHỨNG #2 -->
+<section style="padding:48px 0">
+  <div class="wrap">
+    <div class="todo"><b>📌 CẦN BỔ SUNG — Bằng chứng #2: "BKE làm thật trước khi dạy"</b>
+      <ul><li>1–2 ảnh chụp màn hình thật: bộ não số của BKE, một trợ lý AI đang chạy (che thông tin nhạy cảm)</li><li>Một câu chuyện trước/sau: việc gì, trước mất bao lâu, giờ mất bao lâu</li><li>Con số: số trợ lý AI/Skill đang chạy, số phòng ban đang dùng</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ỨNG DỤNG ===== -->
+<section class="alt" id="ung-dung">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Mang việc gì vào lớp</span>
+      <h2>Phòng ban nào cũng có một việc đáng giao cho AI</h2>
+    </div>
+    <div class="depts">
+      <div class="dept"><div class="circ"><svg class="ic"><use href="#i-chat"/></svg></div><b>Kinh doanh & CSKH</b><small>Trả lời khách đúng chính sách</small></div>
+      <div class="dept"><div class="circ"><svg class="ic"><use href="#i-mega"/></svg></div><b>Marketing</b><small>Nội dung nhiều kênh, một giọng</small></div>
+      <div class="dept"><div class="circ"><svg class="ic"><use href="#i-people"/></svg></div><b>Nhân sự & đào tạo</b><small>Bộ nhập môn cho người mới</small></div>
+      <div class="dept"><div class="circ"><svg class="ic"><use href="#i-chart"/></svg></div><b>Tài chính & hành chính</b><small>Báo cáo định kỳ cho sếp</small></div>
+      <div class="dept"><div class="circ"><svg class="ic"><use href="#i-cog"/></svg></div><b>Sản xuất & vận hành</b><small>Quy trình, danh sách kiểm tra</small></div>
+      <div class="dept"><div class="circ"><svg class="ic"><use href="#i-map"/></svg></div><b>Dự án & dịch vụ</b><small>Tóm tắt họp, nghiệm thu</small></div>
+    </div>
+    <div class="pick" aria-label="Tiêu chí chọn việc">
+      <div><svg class="ic"><use href="#i-loop"/></svg>Lặp lại mỗi tuần</div>
+      <div><svg class="ic"><use href="#i-check"/></svg>Có chuẩn đúng sai rõ ràng</div>
+      <div><svg class="ic"><use href="#i-user"/></svg>Có một người chịu trách nhiệm</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIẾT KIỆM ===== -->
+<section id="tiet-kiem">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Lợi ích tài chính</span>
+      <h2>Dùng AI rời rạc đang âm thầm tốn tiền ở 5 chỗ</h2>
+      <p>Company Brain và Skill được viết một lần, dùng nhiều lần. Đó là chỗ tiền và token bắt đầu được tiết kiệm.</p>
+    </div>
+
+    <div class="tok">
+      <div class="tok-h"><svg class="ic"><use href="#i-coins"/></svg><b>Token của một lần giao việc đi vào đâu?</b><span>Minh họa</span></div>
+      <div class="tok-row">
+        <div class="tok-l"><b>AI chưa biết gì về công ty</b><small>Mỗi lần đều phải kể lại từ đầu</small></div>
+        <div class="tok-bar">
+          <i class="s1" style="flex:26">Giải thích công ty</i><i class="s2" style="flex:18">Giải thích quy trình</i><i class="s3" style="flex:9">Yêu cầu</i><i class="s4" style="flex:15">Sửa lần 1</i><i class="s4" style="flex:14">Sửa lần 2</i><i class="s4" style="flex:12">Sửa lần 3</i>
+        </div>
+      </div>
+      <div class="tok-row">
+        <div class="tok-l"><b>Có Company Brain + Skill</b><small>Bối cảnh đã có sẵn</small></div>
+        <div class="tok-bar short">
+          <i class="s3" style="flex:9">Yêu cầu</i><i class="s5" style="flex:10">Duyệt</i><i class="s0" style="flex:75"></i>
+        </div>
+      </div>
+      <div class="tok-legend">
+        <span><i class="s1"></i>Kể lại bối cảnh</span><span><i class="s4"></i>Sửa đi sửa lại</span><span><i class="s3"></i>Phần việc thật</span><span><i class="s5"></i>Người duyệt</span>
+      </div>
+      <p class="tok-note">Bối cảnh công ty nằm sẵn trong Company Brain, và mỗi Skill chỉ nạp phần cần cho đúng việc đó. Bớt phần kể lại và bớt vòng sửa là bớt token, bớt thời gian cho cùng một kết quả.</p>
+    </div>
+
+    <div class="leaks">
+      <div class="leak-h"><span></span><span class="bad-h"><svg class="ic"><use href="#i-x"/></svg>Hôm nay</span><span></span><span class="good-h"><svg class="ic"><use href="#i-check"/></svg>Khi có Company Brain</span></div>
+      <div class="leak">
+        <div class="lk-n"><div class="lk-i"><svg class="ic"><use href="#i-coins"/></svg></div><b>Token & phí AI</b></div>
+        <div class="lk-b">Gõ lại bối cảnh mỗi lần, sửa nhiều vòng</div><div class="lk-a">→</div>
+        <div class="lk-g">Viết bối cảnh một lần, Skill chỉ nạp phần cần</div>
+      </div>
+      <div class="leak">
+        <div class="lk-n"><div class="lk-i"><svg class="ic"><use href="#i-clock"/></svg></div><b>Giờ công</b></div>
+        <div class="lk-b">Việc lặp lại làm tay mỗi tuần</div><div class="lk-a">→</div>
+        <div class="lk-g">Giao cho Skill, người chỉ duyệt</div>
+      </div>
+      <div class="leak">
+        <div class="lk-n"><div class="lk-i"><svg class="ic"><use href="#i-laptop"/></svg></div><b>Công cụ rời rạc</b></div>
+        <div class="lk-b">Mỗi phòng tự mua một công cụ AI riêng</div><div class="lk-a">→</div>
+        <div class="lk-g">Một trợ lý chung, nhiều Skill theo phòng ban</div>
+      </div>
+      <div class="leak">
+        <div class="lk-n"><div class="lk-i"><svg class="ic"><use href="#i-people"/></svg></div><b>Đào tạo người mới</b></div>
+        <div class="lk-b">Người cũ bỏ việc để kèm người mới</div><div class="lk-a">→</div>
+        <div class="lk-g">Người mới hỏi Company Brain trước, hỏi người sau</div>
+      </div>
+      <div class="leak">
+        <div class="lk-n"><div class="lk-i"><svg class="ic"><use href="#i-shield"/></svg></div><b>Sai sót & mất tri thức</b></div>
+        <div class="lk-b">Hứa sai phải đền bù, người giỏi nghỉ mang theo cách làm</div><div class="lk-a">→</div>
+        <div class="lk-g">Lằn ranh chặn hứa sai, tri thức ở lại công ty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LỘ TRÌNH ===== -->
+<section class="dark" id="lo-trinh">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Lộ trình</span>
+      <h2>4 buổi, 4 sản phẩm. Rồi 30 ngày có coach đồng hành.</h2>
+    </div>
+    <div class="day-tags"><div>NGÀY 1 · TỪ SECOND BRAIN ĐẾN BỘ NÃO SỐ DOANH NGHIỆP</div><div>NGÀY 2 · TỪ MỘT VIỆC ĐẾN CẢ ĐỘI DÙNG ĐƯỢC</div></div>
+    <div class="tl">
+      <div class="node"><div class="dot"><svg class="ic"><use href="#i-user"/></svg></div><div class="when">Ngày 1 · Sáng</div><h3>Dựng Second Brain cho chính bạn</h3><span class="get"><svg class="ic"><use href="#i-bot"/></svg>Second Brain cá nhân</span></div>
+      <div class="node"><div class="dot"><svg class="ic"><use href="#i-brain"/></svg></div><div class="when">Ngày 1 · Chiều</div><h3>Xây bộ não số doanh nghiệp</h3><span class="get"><svg class="ic"><use href="#i-brain"/></svg>Company Brain v1</span></div>
+      <div class="node"><div class="dot"><svg class="ic"><use href="#i-spark"/></svg></div><div class="when">Ngày 2 · Sáng</div><h3>Từ quy trình thành Skill chạy thật</h3><span class="get"><svg class="ic"><use href="#i-spark"/></svg>SOP + Skill đầu tiên</span></div>
+      <div class="node"><div class="dot"><svg class="ic"><use href="#i-hand"/></svg></div><div class="when">Ngày 2 · Chiều</div><h3>Cho người khác dùng thử, sửa lỗi và bàn giao</h3><span class="get"><svg class="ic"><use href="#i-flag"/></svg>Kế hoạch triển khai 30 ngày</span></div>
+    </div>
+
+    <div class="track">
+      <div class="track-h"><b>30 ngày đồng hành sau lớp</b><span>Coach sẵn sàng hỗ trợ khi bạn triển khai tại công ty</span></div>
+      <div class="rail"><i></i>
+        <div class="mk" style="left:1%"><span>Ngày 1</span></div>
+        <div class="mk" style="left:99%"><span>Ngày 30</span></div>
+      </div>
+      <div class="track-goals">
+        <div><svg class="ic"><use href="#i-chat"/></svg>Hỏi đáp với coach bất cứ khi nào vướng</div>
+        <div><svg class="ic"><use href="#i-hand"/></svg>Hướng dẫn thêm khi triển khai Skill mới</div>
+        <div><svg class="ic"><use href="#i-gift"/></svg>Tặng toolkit lập Skill chuẩn cho từng phòng ban</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SẢN PHẨM MANG VỀ ===== -->
+<section>
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Mang về sau 2 ngày</span>
+      <h2>6 sản phẩm dùng được ngay, không phải tập slide</h2>
+    </div>
+    <div class="outs">
+      <div class="o p"><div class="oi"><svg class="ic"><use href="#i-bot"/></svg></div><div><span class="who">Cá nhân</span><b>Second Brain cá nhân</b><small>Trợ lý AI hiểu công việc của riêng bạn</small></div></div>
+      <div class="o c"><div class="oi"><svg class="ic"><use href="#i-brain"/></svg></div><div><span class="who">Công ty</span><b>Bộ não số doanh nghiệp v1</b><small>Đủ 8 khối DNA, bổ sung dần</small></div></div>
+      <div class="o c"><div class="oi"><svg class="ic"><use href="#i-ban"/></svg></div><div><span class="who">Công ty</span><b>Tóm tắt 1 trang & điều cấm</b><small>Cả đội tra nhanh</small></div></div>
+      <div class="o t"><div class="oi"><svg class="ic"><use href="#i-list"/></svg></div><div><span class="who">Đội</span><b>Quy trình chuẩn 1 trang</b><small>Bước, người duyệt, chuẩn đạt</small></div></div>
+      <div class="o t"><div class="oi"><svg class="ic"><use href="#i-spark"/></svg></div><div><span class="who">Đội</span><b>Skill đầu tiên chạy thật</b><small>Sửa 3 lần, người ngoài dùng được</small></div></div>
+      <div class="o c"><div class="oi"><svg class="ic"><use href="#i-flag"/></svg></div><div><span class="who">Công ty</span><b>Kế hoạch triển khai 30 ngày</b><small>Việc gì, ai phụ trách, đo bằng gì</small></div></div>
+    </div>
+    <div class="legend"><span><i style="background:#2f55a8"></i>Cho từng người</span><span><i style="background:var(--teal)"></i>Cho đội</span><span><i style="background:#d9a62a"></i>Cho cả công ty</span></div>
+    <div class="gift"><div class="gi"><svg class="ic"><use href="#i-gift"/></svg></div><div><span>Quà tặng kèm</span><b>Bộ toolkit lập Skill chuẩn cho từng phòng ban</b><small>Mẫu và hướng dẫn để đội bạn tự lập thêm Skill đúng chuẩn sau khi rời lớp.</small></div></div>
+  </div>
+</section>
+
+<!-- ===== ĐỘI NGŨ ===== -->
+<section class="alt" id="doi-ngu">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Người đứng lớp</span>
+      <h2>Người dạy phải là người đã tự làm được</h2>
+    </div>
+    <div class="todo" style="margin-bottom:20px"><b>📌 CẦN BỔ SUNG — Đội ngũ giảng viên & người kèm cặp</b>Mỗi người: ảnh chân dung thật (vuông, dưới 150KB), họ tên, vai trò, 1–2 dòng thành tựu cụ thể. Giảng viên chính lên đầu.</div>
+    <div class="team">
+      <div class="tm"><div class="ph">[Ảnh giảng viên chính]</div><div class="in"><b>[Họ tên]</b><span>Giảng viên chính</span><p>[Thành tựu 1–2 dòng]</p></div></div>
+      <div class="tm"><div class="ph">[Ảnh người kèm cặp]</div><div class="in"><b>[Họ tên]</b><span>Người kèm cặp</span><p>[Thành tựu 1–2 dòng]</p></div></div>
+      <div class="tm"><div class="ph">[Ảnh người kèm cặp]</div><div class="in"><b>[Họ tên]</b><span>Người kèm cặp</span><p>[Thành tựu 1–2 dòng]</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 📌 BẰNG CHỨNG #3 -->
+<section style="padding:48px 0 0">
+  <div class="wrap">
+    <div class="todo"><b>📌 CẦN BỔ SUNG — Bằng chứng #3: cảm nhận & kết quả (ngay trước học phí)</b>
+      <ul><li>2–3 cảm nhận có tên thật, chức danh, công ty, ảnh (hoặc video dưới 60 giây)</li><li>Mỗi cảm nhận kèm một con số: tiết kiệm bao nhiêu giờ, việc gì nhanh hơn</li><li>Chưa có học viên lớp này: dùng kết quả dự án AI BKE đã triển khai hoặc buổi học thử</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HỌC PHÍ ===== -->
+<section id="hoc-phi">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kicker">Học phí & đăng ký</span>
+      <h2>2 ngày dựng nền móng. 30 ngày có coach đồng hành.</h2>
+    </div>
+    <div class="price-wrap">
+      <div class="price-card">
+        <span class="pill">Đăng ký càng đông, giá mỗi người càng tốt</span>
+        <div class="tiers">
+          <div class="tier"><div class="ppl"><svg class="ic"><use href="#i-user"/></svg></div><small>1 người</small><b>3.900.000đ</b><em>&nbsp;</em></div>
+          <div class="tier"><div class="ppl"><svg class="ic"><use href="#i-user"/></svg><svg class="ic"><use href="#i-user"/></svg></div><small>Nhóm 2 người</small><b>7.000.000đ</b><em>3,5 triệu/người · tiết kiệm 800.000đ</em></div>
+          <div class="tier rec"><span class="flag">Tiết kiệm nhất</span><div class="ppl"><svg class="ic"><use href="#i-user"/></svg><svg class="ic"><use href="#i-user"/></svg><svg class="ic"><use href="#i-user"/></svg></div><small>Nhóm 3 người</small><b>9.000.000đ</b><em>3 triệu/người · tiết kiệm 2.700.000đ</em></div>
+        </div>
+        <ul class="incl">
+          <li><svg class="ic"><use href="#i-cal"/></svg>2 ngày tại [ĐỊA ĐIỂM]</li>
+          <li><svg class="ic"><use href="#i-doc"/></svg>Bộ mẫu Company Brain, SOP, Skill</li>
+          <li><svg class="ic"><use href="#i-chat"/></svg>30 ngày coach hỗ trợ</li>
+          <li class="gift-li"><svg class="ic"><use href="#i-gift"/></svg>Tặng toolkit lập Skill theo phòng ban</li>
+          <li><svg class="ic"><use href="#i-receipt"/></svg>Hóa đơn VAT</li>
+          <li><svg class="ic"><use href="#i-shield"/></svg>[Chính sách hoàn phí]</li>
+        </ul>
+        <div class="extra"><svg class="ic"><use href="#i-laptop"/></svg><div><b>Tự chuẩn bị:</b> laptop + tài khoản AI trả phí <b>[TÊN CÔNG CỤ]</b> ≈ <b>[GIÁ]/tháng</b>. BKE hướng dẫn cài đặt trong buổi chuẩn bị online.</div></div>
+      </div>
+
+      <form class="form-card" id="dang-ky" novalidate>
+        <h3>Đăng ký tư vấn</h3>
+        <p>BKE gọi lại trong 24 giờ làm việc để tìm việc phù hợp nhất cho công ty bạn mang vào lớp.</p>
+        <label for="f-name">Họ và tên</label>
+        <input id="f-name" name="name" autocomplete="name" placeholder="Nguyễn Văn A" required>
+        <div class="two">
+          <div><label for="f-phone">Số điện thoại (Zalo)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="09xx xxx xxx" required></div>
+          <div><label for="f-role">Vai trò</label><select id="f-role" name="role"><option>Chủ doanh nghiệp / Giám đốc</option><option>Quản lý cấp cao</option><option>Trưởng phòng / Trưởng nhóm</option><option>Khác</option></select></div>
+        </div>
+        <label for="f-company">Tên công ty</label>
+        <input id="f-company" name="company" autocomplete="organization" placeholder="Công ty ABC">
+        <div class="two">
+          <div><label for="f-size">Quy mô nhân sự</label><select id="f-size" name="size"><option>Dưới 10 người</option><option selected>10–30 người</option><option>30–100 người</option><option>Trên 100 người</option></select></div>
+          <div><label for="f-team">Dự kiến cử</label><select id="f-team" name="team"><option>1 người</option><option selected>Nhóm 2 người</option><option>Nhóm 3 người</option><option>Trên 3 người, cần báo giá</option></select></div>
+        </div>
+        <button type="submit" class="btn">Đăng ký tư vấn</button>
+        <div id="form-status" role="status"></div>
+        <p class="alt-contact">Hỏi nhanh? <a href="#" data-zalo>Nhắn Zalo BKE</a> · Gọi <a href="#" data-hotline>[HOTLINE]</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="alt" id="hoi-dap">
+  <div class="wrap">
+    <div class="head c"><span class="kicker">Hỏi đáp</span><h2>Những điều nên biết trước khi đăng ký</h2></div>
+    <div class="faq">
+      <details><summary>Tôi chưa rành AI, có theo học được không?</summary><p>Được. Không cần biết lập trình. Trước lớp có buổi chuẩn bị online để kiểm tra máy, tài khoản và việc bạn mang vào lớp.</p></details>
+      <details><summary>Học xong 2 ngày, công ty đã tự động hóa hết chưa?</summary><p>Chưa. Sau 2 ngày bạn có bộ não số doanh nghiệp phiên bản đầu và một việc đã dạy cho trợ lý AI, chạy thử được, giao được cho người khác. Trong 30 ngày sau lớp, coach hỗ trợ hỏi đáp và hướng dẫn thêm khi bạn mở rộng sang việc khác.</p></details>
+      <details><summary>Trợ lý AI và Skill khác nhau thế nào?</summary><p>Trợ lý AI là công cụ bạn mở ra dùng hằng ngày. Skill là từng việc cụ thể bạn dạy cho trợ lý đó, ví dụ "trả lời khách hỏi giao hàng". Một trợ lý có thể được dạy nhiều Skill.</p></details>
+      <details><summary>Company Brain và Second Brain khác nhau thế nào?</summary><p>Company Brain (bộ não số doanh nghiệp) là tri thức chung của cả công ty: sản phẩm, khách hàng, giọng nói, quy tắc, điều cấm. Cả đội cùng dùng. Second Brain là bộ não số của riêng từng người: công việc, cách làm và tài liệu của vị trí mình. Second Brain của mỗi người được xây trên nền Company Brain của công ty.</p></details>
+      <details><summary>Tôi cần mang dữ liệu gì?</summary><p>Mô tả công việc, quy trình và nội dung đã được phép dùng. Thông tin khách hàng, hợp đồng, lương phải được che đi hoặc thay bằng dữ liệu mẫu.</p></details>
+      <details><summary>Vì sao nên cử từ 2 người?</summary><p>Người ra quyết định nắm định hướng, người trực tiếp làm nắm chi tiết. Sau lớp có người duy trì và có người đủ quyền mở rộng.</p></details>
+      <details><summary>Bộ não số doanh nghiệp thuộc về ai?</summary><p>Doanh nghiệp sở hữu toàn bộ bộ não số và các Skill làm ra. Nếu BKE cần lưu để hỗ trợ trong 30 ngày đồng hành, hai bên thỏa thuận riêng về phạm vi và thời hạn.</p></details>
+      <details><summary>Công ty muốn cử trên 3 người thì sao?</summary><p>Liên hệ BKE để nhận báo giá theo nhóm và sắp xếp chỗ ngồi phù hợp.</p></details>
+      <details><summary>Có xuất hóa đơn VAT không?</summary><p>Có. Gửi thông tin xuất hóa đơn khi xác nhận đăng ký.</p></details>
+      <details><summary>Có việc đột xuất không đi học được thì sao?</summary><p>[Điền chính sách hoàn phí hoặc chuyển lớp.]</p></details>
+      <details><summary>Tôi là nhân viên, đăng ký cá nhân được không?</summary><p>Được. Học viên cá nhân được ghép bàn với người cùng lĩnh vực. Chọn "1 người" trong form, BKE sẽ tư vấn.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Bắt đầu trước khi sự lộn xộn được nhân lên</h2>
+    <p>Mang một việc thật vào lớp. Rời lớp với trợ lý AI mà đồng nghiệp nhận lại vẫn dùng được. Chỉ 12 bàn mỗi lớp.</p>
+    <a href="#dang-ky" class="btn">Đăng ký tư vấn</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><b>BKE · AI for Business</b><br>Viết một lần. Cả đội dùng chung. Người mới vẫn tiếp nhận được.</div>
+    <div>Hotline: <a href="#" data-hotline>[HOTLINE]</a> · Zalo: <a href="#" data-zalo>Nhắn BKE</a><br>Email: [EMAIL] · Địa chỉ: [ĐỊA CHỈ]</div>
+  </div>
+</footer>
+
+<a href="#" class="zalo" data-zalo aria-label="Nhắn Zalo cho BKE"><svg class="ic"><use href="#i-chat"/></svg><span>Hỏi nhanh qua Zalo</span></a>
+
+<script>
+/* ===== CẤU HÌNH — chỉ cần sửa 3 dòng ===== */
+const CONFIG = {
+  FORM_ENDPOINT: "",                          // link Google Apps Script ghi vào Google Sheet
+  ZALO_URL: "https://zalo.me/[SỐ_ZALO_BKE]",
+  HOTLINE: "[HOTLINE]"
+};
+
+document.querySelectorAll('[data-zalo]').forEach(a => { a.href = CONFIG.ZALO_URL; a.target = "_blank"; a.rel = "noopener"; });
+document.querySelectorAll('[data-hotline]').forEach(a => { a.href = "tel:" + CONFIG.HOTLINE.replace(/\s/g,''); a.textContent = CONFIG.HOTLINE; });
+
+/* ===== 8 phần DNA ===== */
+const DNA = [
+  ["Gốc gác & lý do tồn tại","Công ty sinh ra để giải nỗi đau gì, cho ai?","AI viết ra thứ đúng mà vô hồn. Ai đọc cũng thấy quen, không nhớ được."],
+  ["Nguyên tắc bất di bất dịch","Điều gì dù lỗ cũng không làm?","AI đề xuất cách làm nhanh mà công ty không bao giờ chấp nhận được."],
+  ["Chân dung khách hàng thật","Họ là ai, đang đau gì, và nói bằng những từ nào?","AI viết bằng từ của người bán, không phải từ khách hàng thật sự dùng."],
+  ["Sản phẩm & lời hứa","Bán gì, hứa gì, và không được hứa gì?","AI hứa quá tay. Công ty đi dọn phía sau và mất uy tín."],
+  ["Giọng công ty","Xưng hô thế nào, câu dài hay ngắn, từ nào cấm, ví dụ đúng và sai?","Mười người dùng AI ra mười giọng khác nhau."],
+  ["Cách làm việc","Quy trình chính, ai quyết định gì, thế nào là xong?","AI làm ra thứ không ai duyệt được, vì không ai biết chuẩn đạt là gì."],
+  ["Thông tin chuẩn đã xác nhận","Số liệu, tình huống, câu chuyện có thật và có nguồn.","AI tự bịa. Không có nguồn thì không được nói."],
+  ["Lằn ranh — những điều cấm","Dữ liệu nào không được đưa lên AI, việc gì AI không được đụng tới?","Nhân viên đưa dữ liệu khách lên mạng mà không ai biết. Đến khi biết thì đã muộn."]
+];
+const blks = document.querySelectorAll('.blk');
+function showDNA(i){
+  blks.forEach(b => b.setAttribute('aria-pressed', b.dataset.i == i ? 'true' : 'false'));
+  document.getElementById('d-n').textContent = 'Khối DNA ' + (i + 1) + ' / 8';
+  document.getElementById('d-t').textContent = DNA[i][0];
+  document.getElementById('d-q').textContent = DNA[i][1];
+  document.getElementById('d-m').textContent = DNA[i][2];
+  document.getElementById('d-h').textContent = i === 6 ? '★ Khối quan trọng nhất để chặn AI bịa thông tin.' : '';
+}
+blks.forEach(b => b.addEventListener('click', () => showDNA(+b.dataset.i)));
+showDNA(6);
+
+/* ===== Form ===== */
+const form = document.getElementById('dang-ky');
+const statusEl = document.getElementById('form-status');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = form.name.value.trim(), phone = form.phone.value.trim();
+  statusEl.className = '';
+  if (!name || !/^[0-9+\s.]{9,14}$/.test(phone)) { statusEl.className = 'err'; statusEl.textContent = 'Vui lòng nhập họ tên và số điện thoại hợp lệ.'; return; }
+  const data = Object.fromEntries(new FormData(form)); data.time = new Date().toISOString(); data.page = location.href;
+  if (!CONFIG.FORM_ENDPOINT) { statusEl.className = 'err'; statusEl.innerHTML = 'Biểu mẫu đang được kết nối. Bạn vui lòng <a href="' + CONFIG.ZALO_URL + '" target="_blank" rel="noopener" style="color:#f8c64e">nhắn Zalo cho BKE</a> để được tư vấn ngay.'; return; }
+  const btn = form.querySelector('button'); btn.disabled = true; btn.textContent = 'Đang gửi…';
+  try {
+    await fetch(CONFIG.FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
+    statusEl.className = 'ok'; statusEl.textContent = 'Đã nhận thông tin. BKE sẽ gọi lại cho bạn trong 24 giờ làm việc.'; form.reset();
+    if (window.fbq) fbq('track', 'Lead'); if (window.gtag) gtag('event', 'generate_lead');
+  } catch (err) {
+    statusEl.className = 'err'; statusEl.innerHTML = 'Chưa gửi được. Bạn vui lòng <a href="' + CONFIG.ZALO_URL + '" target="_blank" rel="noopener" style="color:#f8c64e">nhắn Zalo cho BKE</a>.';
+  } finally { btn.disabled = false; btn.textContent = 'Đăng ký tư vấn'; }
+});
+
+</script>
+</body>
+</html>
